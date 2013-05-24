@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Sendicate : Evil Popup</title>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+	<!-- jQuery FancyBox Library -->
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.js?v=2.1.4"></script>
+	<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css?v=2.1.4" media="screen" />
+	
+	<!-- This post-handler.js makes use of ajax to send values to subscription.php -->
+	<script src="js/post-handler.js"></script>
+</head>
+<body>
+	<div>
+		<p>Popup will open in 2s...</p>
+		<p>Checkout source code!</p>
+
+		<p><small>Popup library: jQuery Fancybox <a href="http://fancybox.net/">http://fancybox.net/</a></small></p>
+	</div>
+
+	<br/><hr/>
+
+	<a href="#newsletter-form" class="open-popup">Open popup</a>
+
+	<div id="newsletter-form" class="login-form" style="display:none;">
+		<form id="sendicate-form-subscription" action="subscription.php" method="POST" />
+			<h3>Newsletter Signup</h3>
+			<p>Some welcome text to encourage subscriptions!</p>
+			<input type="text" name="Subscriber[name]" id="subscriber_name" placeholder="your name..." size="40" />
+			<br/>
+			<input type="text" name="Subscriber[email]" id="subscriber_email" placeholder="your email..." size="40" />
+			<br/>
+			<!--
+				Reuse this line to add more fields...
+				<input type="text" name="Subscriber[NEW_FIELD_NAME_FORM]" id="id_of_the_field" placeholder="your placeholder text..." size="40" />
+			-->
+			<button type="submit" id="form_submit">Subscribe</button>
+		</form>
+		<div id="sendicate-response"></div>
+	</div>
+
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			
+			// Handle FancyBox link
+			$(".open-popup").fancybox({
+				openEffect: 'fade'
+				,speedIn: 300
+				,closeEffect: 'elastic'
+				,speedOut: 300
+
+			});
+
+			// If you don't want to show the link, uncomment this line
+			//$(".open-popup").hide();
+
+			// Auto Open popup is enabled
+			// If you want to fire it only clicking the link, delete setTimeout()
+			// Increase 2000 value, if you want to delay even more...
+			setTimeout(function(){
+				$(".open-popup").trigger('click');
+			}, 2000);
+			
+		});
+	</script>
+</body>
+</html>
