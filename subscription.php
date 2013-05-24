@@ -1,8 +1,7 @@
 <?php
 /**
- * 
- * 
- * 
+ * Sendicate Evil Popup post handler
+ * @author Martin Hansen
 */
 
 // Init the error logging report, just in case...
