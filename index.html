@@ -4,6 +4,9 @@
 	<title>Sendicate : Evil Popup</title>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+	<!-- jQuery Cookie library -->
+	<script src="js/jquery.cookie.js"></script>
 	
 	<!-- jQuery FancyBox Library -->
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox.js?v=2.1.4"></script>
@@ -46,24 +49,32 @@
 		
 		$(document).ready(function(){
 			
-			// Handle FancyBox link
-			$(".open-popup").fancybox({
-				openEffect: 'fade'
-				,speedIn: 300
-				,closeEffect: 'elastic'
-				,speedOut: 300
+			var cookie_name = 'sendicate-evilpopup';
 
-			});
+			if(!$.cookie(cookie_name))
+			{
+				// Handle FancyBox link
+				$(".open-popup").fancybox({
+					openEffect: 'fade'
+					,speedIn: 300
+					,closeEffect: 'elastic'
+					,speedOut: 300
 
-			// If you don't want to show the link, uncomment this line
-			//$(".open-popup").hide();
+				});
 
-			// Auto Open popup is enabled
-			// If you want to fire it only clicking the link, delete setTimeout()
-			// Increase 2000 value, if you want to delay even more...
-			setTimeout(function(){
-				$(".open-popup").trigger('click');
-			}, 2000);
+				// If you don't want to show the link, uncomment this line
+				//$(".open-popup").hide();
+
+				// Auto Open popup is enabled
+				// If you want to fire it only clicking the link, delete setTimeout()
+				// Increase 2000 value, if you want to delay even more...
+				setTimeout(function(){
+					$(".open-popup").trigger('click');
+				}, 2000);
+
+				// Write the cookie 
+				$.cookie(cookie_name, '1', { expires: 30, path: '/' });
+			}
 			
 		});
 	</script>
