@@ -1,6 +1,6 @@
 /**
  * Sendicate Evil Popup
- * @author Martin Hansen
+ * @author Martin Hansen <martin.hansen@gmail.com>
 */
 
 $(document).ready(function() {
