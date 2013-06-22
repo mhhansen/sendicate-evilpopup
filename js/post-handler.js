@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 		// Clean up response wrapper if we made a previous call...
 		$responseWrapper.empty();
-		
+		$responseWrapper.html('Sending subscription...');
 
 		$.ajax({
 			url: $form.attr("action")
