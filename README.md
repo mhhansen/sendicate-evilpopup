@@ -1,7 +1,8 @@
 sendicate-evilpopup
 ===================
 
-Sendicate Example - Automatic fire popup with subscription form
+Sendicate Example - Automatic fire popup with subscription form.
+It will also write a cookie the first time that it's open, and will remain for 30d. You can adjust this settings in the index.html source code.
 
 
 # Auto Popup
